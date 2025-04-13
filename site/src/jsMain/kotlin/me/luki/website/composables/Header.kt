@@ -224,7 +224,7 @@ private fun ColorModeButton() {
                 text = "Dark",
                 onClick = {
                     colorMode = ColorMode.DARK
-                    colorMode.saveToLocalStorage(key = COLOR_MODE_KEY)
+                    colorMode.saveToLocalStorage(key = COLOR_MODE_KEY.name)
                     closePopover()
                     shouldAnimate = false
                 }
@@ -233,7 +233,7 @@ private fun ColorModeButton() {
                 text = "Light",
                 onClick = {
                     colorMode = ColorMode.LIGHT
-                    colorMode.saveToLocalStorage(key = COLOR_MODE_KEY)
+                    colorMode.saveToLocalStorage(key = COLOR_MODE_KEY.name)
                     closePopover()
                     shouldAnimate = false
                 }
@@ -242,7 +242,7 @@ private fun ColorModeButton() {
                 text = "System",
                 onClick = {
                     colorMode = ColorMode.systemPreference
-                    localStorage.removeItem(key = COLOR_MODE_KEY)
+                    localStorage.removeItem(key = COLOR_MODE_KEY.name)
                     closePopover()
                     shouldAnimate = false
                 }
