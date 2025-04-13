@@ -2,6 +2,8 @@
 name: Build website & deploy it to Cloudflare
 
 on:
+  pull_request:
+
   push:
     branches:
       - main
