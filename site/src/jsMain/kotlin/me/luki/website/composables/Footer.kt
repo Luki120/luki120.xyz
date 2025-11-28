@@ -54,7 +54,6 @@ fun Footer() {
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
-            .gridRow(2, 3)
             .backgroundColor(ColorMode.current.toSitePalette().nearBackground)
     ) {
         Column(
