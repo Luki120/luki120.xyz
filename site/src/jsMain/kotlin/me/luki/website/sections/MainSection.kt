@@ -76,6 +76,7 @@ private fun About() {
                         direction = AnimationDirection.AlternateReverse
                     )
                 )
+                .ariaLabel("Scroll down arrow button")
                 .bottom(10.percent)
                 .color(ColorMode.current.toSitePalette().accent)
                 .position(Position.Absolute)

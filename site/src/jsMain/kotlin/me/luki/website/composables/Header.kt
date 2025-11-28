@@ -107,7 +107,10 @@ fun Header() {
             var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
 
             ColorModeButton()
-            Button(onClick = { menuState = SideMenuState.OPEN }) {
+            Button(
+                modifier = Modifier.ariaLabel("Hamburger menu button"),
+                onClick = { menuState = SideMenuState.OPEN }
+            ) {
                 HamburgerIcon()
             }
 
@@ -152,7 +155,10 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     .onAnimationEnd { onAnimationEnd() },
                 horizontalAlignment = Alignment.End
             ) {
-                Button(onClick = { close() }) {
+                Button(
+                    modifier = Modifier.ariaLabel("Close hamburger menu button"),
+                    onClick = { close() }
+                ) {
                     CloseIcon()
                 }
                 Column(
@@ -198,6 +204,7 @@ private fun ColorModeButton() {
     }
 
     Button(
+        modifier = Modifier.ariaLabel("Color mode button"),
         onClick = {
             shouldAnimate = true
             if (openCloseStrategy.isOpen) closePopover()

@@ -73,8 +73,8 @@ fun Footer() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                SocialButton(imageSource = Images.GITHUB, url = Constants.GITHUB_URL)
-                SocialButton(imageSource = Images.TWITTER, url = Constants.TWITTER_URL)
+                SocialButton(image = Images.GITHUB, description = "GitHub link", url = Constants.GITHUB_URL)
+                SocialButton(image = Images.TWITTER, description = "Twitter link", url = Constants.TWITTER_URL)
             }
             FooterText(text = "© $currentYear Luki120", fontSize = 0.75.cssRem)
         }
@@ -94,7 +94,7 @@ private fun FooterText(text: String, fontSize: CSSLengthOrPercentageNumericValue
 
 @OptIn(ExperimentalComposeWebApi::class)
 @Composable
-private fun SocialButton(imageSource: String, url: String) {
+private fun SocialButton(image: String, description: String, url: String) {
     val isLight = when (ColorMode.current) {
         ColorMode.DARK -> false
         ColorMode.LIGHT -> true
@@ -106,7 +106,8 @@ private fun SocialButton(imageSource: String, url: String) {
         modifier = SocialButtonStyle.toModifier()
     ) {
         Image(
-            src = imageSource,
+            src = image,
+            description = description,
             modifier = Modifier
                 .styleModifier {
                     filter { if (isLight) invert(1) else invert(0) }
