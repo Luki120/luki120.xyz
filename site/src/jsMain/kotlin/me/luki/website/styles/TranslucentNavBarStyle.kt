@@ -14,6 +14,6 @@ val TranslucentNavBarStyle = CssStyle.base {
         .backdropFilter(blur(5.px))
         .fillMaxWidth()
         .padding(15.px)
-        .position(Position.Sticky)
+        .position(Position.Fixed)
         .top(0.percent)
 }
