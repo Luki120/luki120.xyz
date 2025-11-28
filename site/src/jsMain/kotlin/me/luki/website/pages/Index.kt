@@ -1,12 +1,6 @@
 package me.luki.website.pages
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.compose.foundation.layout.Box
-import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
-import com.varabyte.kobweb.compose.ui.modifiers.gridTemplateRows
 import com.varabyte.kobweb.core.Page
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -14,7 +8,7 @@ import me.luki.website.composables.Footer
 import me.luki.website.composables.Header
 import me.luki.website.sections.ExperienceSection
 import me.luki.website.sections.MainSection
-import org.jetbrains.compose.web.css.fr
+import org.jetbrains.compose.web.dom.Div
 import org.w3c.dom.Element
 import org.w3c.dom.asList
 
@@ -26,19 +20,10 @@ fun HomePage() {
 
     UpdateSectionId(selectedSectionId = selectedSectionId, sections = sections)
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .gridTemplateRows { size(1.fr); size(auto) }
-    ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Header()
-            MainSection()
-            ExperienceSection()
-        }
+    Div {
+        Header()
+        MainSection()
+        ExperienceSection()
         Footer()
     }
 }
