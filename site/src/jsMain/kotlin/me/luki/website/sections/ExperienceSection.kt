@@ -29,7 +29,7 @@ private fun Languages() {
             .id("experience")
             .classNames("section-container")
             .fillMaxSize()
-            .height(50.vh)
+            .minHeight(50.vh)
             .scrollMargin(top = 4.cssRem),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
@@ -62,8 +62,8 @@ private fun Projects() {
             .id("projects")
             .classNames("section-container")
             .fillMaxSize()
-            .height(100.vh)
-            .padding(top = 5.cssRem)
+            .minHeight(100.vh)
+            .padding(topBottom = 5.cssRem)
             .scrollMargin(top = 4.cssRem),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
@@ -81,7 +81,7 @@ private fun Projects() {
                 .gap(0.8.cssRem)
                 .padding(top = 1.cssRem)
         ) {
-            Project(name = "Areesha", description = "Keep track of your favorite TV shows")
+            Project(name = "Areesha", description = "Keep track of your favorite TV shows & movies")
             Project(name = "Azure", description = "FOSS TOTP 2FA with a clean, straightforward UI")
             Project(name = "Chrissa", description = "An actually good weather framework for jailbroken devices")
         }
